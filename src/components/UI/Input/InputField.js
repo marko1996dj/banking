@@ -16,7 +16,9 @@ const inputField = (props) => {
 
 			return (
 				<div className={classes.InputField}>
-					<label className={classes.Label}>{props.Label}</label>
+					<div className={classes.Label}>
+						<label>{props.label}</label>
+					</div>
 					{inputElement}
 				</div>
 			);

@@ -41,6 +41,7 @@ class Login extends Component {
 					name="email"
 					placeholder="your email"
 					onChange={this.handleChange}
+					autocomplete="off"
 				/>
 				<InputField
 					value={this.state.password}
@@ -48,8 +49,10 @@ class Login extends Component {
 					name="password"
 					placeholder="your password"
 					onChange={this.handleChange}
+					autocomplete="off"
 				/>
 				<Button onClick={this.login}>Login</Button>
+				
 			</div>
 		);
 	}

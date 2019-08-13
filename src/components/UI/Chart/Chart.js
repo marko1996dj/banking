@@ -28,7 +28,7 @@ class Chart extends Component {
 
 	render() {
 		return (
-			<div className={classes.Chart} style={{height: '800px', width: '800px'}}>
+			<div className={classes.Chart} style={{height: '700px', width: '800px'}}>
 				<Doughnut
 					data={this.state.chartData}
 					options={{
