@@ -1,57 +1,41 @@
 .Button {
 	button[value=general] {
-		border: 1px solid darken(#c3e3f9, 10%);
-		padding: 15px;
-		border-radius: 5px;
 		background: linear-gradient(to right, darken(#c3e3f9, 10%) 50%, #c3e3f9 50%);
-		background-size: 203% 100%;
 		background-position: right bottom;
-		transition: all .25s ease-in-out;
+		background-size: 203% 100%;
+		border-color: darken(#c3e3f9, 10%);
 		color: darken(#c3e3f9, 50%);
-		font-weight: bold;
-		min-width: 150px;
-		margin-top: 15px;
-		&:hover {
-			color: white;
-			cursor: pointer;
-			background-position: left bottom;
-		}
 	}
+
 	button[value=income] {
-		border: 1px solid darken(#8be28b, 10%);
-		padding: 15px;
-		border-radius: 5px;
 		background: linear-gradient(to right, darken(#8be28b, 10%) 50%, #8be28b 50%);
-		background-size: 203% 100%;
 		background-position: right bottom;
-		transition: all .25s ease-in-out;
+		background-size: 203% 100%;
+		border-color: darken(#8be28b, 10%);
 		color: darken(#8be28b, 50%);
-		font-weight: bold;
-		min-width: 150px;
-		margin-top: 15px;
-		&:hover {
-			color: white;
-			cursor: pointer;
-			background-position: left bottom;
-		}
 	}
+
 	button[value=outcome] {
-		border: 1px solid darken(#ff6961, 10%);
-		padding: 15px;
-		border-radius: 5px;
 		background: linear-gradient(to right, #ff6961 50%, lighten(#ff6961, 10%) 50%);
-		background-size: 203% 100%;
 		background-position: right bottom;
-		transition: all .25s ease-in-out;
+		background-size: 203% 100%;
+		border-color: darken(#ff6961, 10%);
 		color: darken(#ff6961, 10%);
+	}
+
+	button {
+		border-radius: 5px;
+		border: 1px solid;
 		font-weight: bold;
-		min-width: 150px;
 		margin-top: 15px;
+		min-width: 150px;
+		padding: 15px;
+		transition: all .25s ease-in-out;
+
 		&:hover {
+			background-position: left bottom;
 			color: white;
 			cursor: pointer;
-			background-position: left bottom;
 		}
 	}
-	
 }

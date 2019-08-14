@@ -8,7 +8,7 @@ class Chart extends Component {
 		super(props);
 		this.state = {
 			chartData: {
-				labels: [ 'Mandatory', 'Food', 'Miscellaneous', 'Gaming', 'Savings' ],
+				labels: null,
 				datasets: [
 					{
 						data: [ '2500', '7000', '1500', '1000', '24000' ],
@@ -18,7 +18,7 @@ class Chart extends Component {
 							'rgba(255, 206, 86, 0.3)',
 							'rgba(75, 192, 192, 0.3)',
 							'rgba(153, 102, 255, 0.3)',
-							'rgba(255, 159, 64, 0.3)',
+							'rgba(255, 159, 64, 0.3)'
 						]
 					}
 				]
@@ -26,20 +26,33 @@ class Chart extends Component {
 		};
 	}
 
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			chartData: {
+				labels: nextProps.items
+			}
+		});
+	}
+
 	render() {
-		return (
-			<div className={classes.Chart} style={{height: '700px', width: '800px'}}>
-				<Doughnut
-					data={this.state.chartData}
-					options={{
-                        legend:{
-                            display: true,
-                            position: 'bottom'
-                        }
-					}}
-				/>
-			</div>
-		);
+		let chart = null;
+		if (this.state.chartData.labels) {
+			console.log(this.state.chartData.labels);
+			chart = (
+				<div className={classes.Chart} style={{ height: '700px', width: '800px' }}>
+					<Doughnut
+						data={this.state.chartData}
+						options={{
+							legend: {
+								display: true,
+								position: 'bottom'
+							}
+						}}
+					/>
+				</div>
+			);
+		}
+		return chart;
 	}
 }
 

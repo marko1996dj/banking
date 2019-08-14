@@ -18,33 +18,68 @@ class Popup extends Component {
 		});
 	};
 
+	post = () => {
+		
+	}
+
 	render() {
 		let popup = null;
 
 		let income = (
 			<div style={{ display: this.state.display }} className={classes.Popup}>
 				<div className={classes.InnerPopup}>
-					<InputField label="Mandatory" />
-					<InputField label="Food" />
-					<InputField label="Miscellaneous" />
-					<InputField label="Gaming" />
-					<InputField label="Savings" />
+					<div className={classes.Input}>
+						<InputField type="textarea" label="Amount" />
+						<span>$</span>
+					</div>
+					<form>
+						<InputField type="radio" name="income" label="Salary" value="salary" />
+						<InputField type="radio" name="income" label="Deposits" value="deposits" />
+						<InputField type="radio" name="income" label="Savings" value="savings" />
+					</form>
 					<Button value="general">Save</Button>
-					<p onClick={this.closePopup}>Close me!</p>
+					<p onClick={this.closePopup}>Close me</p>
 				</div>
 			</div>
 		);
 
+		const expenses = [
+			'Bills',
+			'Car',
+			'Clothes',
+			'Communication',
+			'Eating out',
+			'Entertainment',
+			'Food',
+			'Gifts',
+			'Health',
+			'House',
+			'Pets',
+			'Sports',
+			'Taxi',
+			'Toiletry',
+			'Transport'
+		];
+
+		const expense = expenses.map((item, index) => (
+			<InputField type="radio" name="outcome" label={item} value={item} key={index} />
+		));
+
+		let outcomeStyle = {
+			display: 'flex',
+			flexWrap: 'wrap'
+		};
+
 		let outcome = (
 			<div style={{ display: this.state.display }} className={classes.Popup}>
 				<div className={classes.InnerPopup}>
-					<InputField label="Mandatory" />
-					<InputField label="Food" />
-					<InputField label="Miscellaneous" />
-					<InputField label="Gaming" />
-					<InputField label="Savings" />
-					<Button value="general">Save</Button>
-					<p onClick={this.closePopup}>Close me! bitch</p>
+					<div className={classes.Input}>
+						<InputField label="Amount" />
+						<span>$</span>
+					</div>
+					<form style={outcomeStyle}>{expense}</form>
+					<Button onClick={this.post} value="general">Save</Button>
+					<p onClick={this.closePopup}>Close me</p>
 				</div>
 			</div>
 		);

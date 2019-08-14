@@ -50,7 +50,7 @@ class Register extends Component {
 					placeholder="your password"
 					onChange={this.handleChange}
 				/>
-				<Button onClick={this.register}>Register</Button>
+				<Button value="general" onClick={this.register}>Register</Button>
 			</div>
 		);
 	}

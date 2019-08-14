@@ -51,7 +51,7 @@ class Login extends Component {
 					onChange={this.handleChange}
 					autocomplete="off"
 				/>
-				<Button onClick={this.login}>Login</Button>
+				<Button value="general" onClick={this.login}>Login</Button>
 				
 			</div>
 		);
